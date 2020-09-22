@@ -1,0 +1,27 @@
+.home-header {
+  background: #333;
+  display: flex;
+  justify-content: center;
+  height: 50px;
+  align-items: center;
+}
+
+.header-nav {
+  width: 100px;
+  border: 2px solid #10cbf7;
+  color: #10cbf7;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.header-nav:first-child {
+  border-right: none;
+}
+
+.selected-nav {
+  background-color: #10cbf7;
+  color: #333;
+}
