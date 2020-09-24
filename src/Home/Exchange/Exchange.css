@@ -1,0 +1,46 @@
+.exchange-from-container {
+  display: flex;
+  width: 80%;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: -10px;
+  margin-left: 10%;
+  height: 200px;
+  border: 1px solid #10cbf7;
+  border-radius: 10px;
+}
+
+.exchange-from-select {
+  font-size: 33px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  padding: 10px;
+  outline: none;
+}
+.exchange-from-input {
+  font-size: 33px;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  outline: none;
+  margin-left: 10px;
+  width: 220px;
+}
+
+.exchange-rate {
+  position: relative;
+  bottom: -10px;
+  background-color: #10cbf7;
+  width: 20%;
+  left: calc((100% - 20%) / 2);
+  padding: 5px;
+  text-align: center;
+  border-radius: 4px;
+  font-size: 20px;
+}
+
+.exchange-to-label {
+  font-size: 4em;
+  font-weight: 100;
+  color: white;
+}

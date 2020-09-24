@@ -25,3 +25,18 @@
   background-color: #10cbf7;
   color: #333;
 }
+
+.pockets-header {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: 100;
+  font-size: 36px;
+}
+
+.pockets-details {
+  display: flex;
+  justify-content: space-around;
+}

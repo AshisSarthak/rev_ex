@@ -1,11 +1,14 @@
 import React from "react";
 import { connect } from "react-redux";
-import { fetchCurrentFXRate } from "./homeAction";
 import "./Home.css";
+import Pocket from "./Pockets/Pockets";
+import Exchange from "./Exchange/Exchange";
+import { CURRENCYS } from "../mockData";
 
 export type HomeProps = {
-  fxRate: any;
-  fetchCurrentFXRate: Function;
+  gbpPocket: any;
+  usdPocket: any;
+  eurPocket: any;
 };
 
 export type HomeState = {
@@ -16,10 +19,6 @@ export class Home extends React.Component<HomeProps, HomeState> {
   state = {
     currentPage: "home",
   };
-
-  componentDidMount() {
-    this.props.fetchCurrentFXRate();
-  }
 
   getHeaderClass = (headerPage: string) => {
     let headerString = "header-nav";
@@ -38,6 +37,8 @@ export class Home extends React.Component<HomeProps, HomeState> {
   };
 
   render() {
+    const { gbpPocket, usdPocket, eurPocket } = this.props;
+    const { currentPage } = this.state;
     return (
       <div className="home">
         <header className="home-header">
@@ -54,7 +55,18 @@ export class Home extends React.Component<HomeProps, HomeState> {
             Exchange
           </nav>
         </header>
-        <section>{JSON.stringify(this.props.fxRate)}</section>
+        {currentPage === "home" ? (
+          <>
+            <div className="pockets-header">Your Pockets</div>
+            <section className="pockets-details">
+              <Pocket pocket={gbpPocket} currency={CURRENCYS.GBP}></Pocket>
+              <Pocket pocket={usdPocket} currency={CURRENCYS.USD}></Pocket>
+              <Pocket pocket={eurPocket} currency={CURRENCYS.EUR}></Pocket>
+            </section>
+          </>
+        ) : (
+          <Exchange />
+        )}
       </div>
     );
   }
@@ -62,10 +74,11 @@ export class Home extends React.Component<HomeProps, HomeState> {
 
 const mapStateToProps = (state: any) => ({
   fxRate: state.fxRates.fxRates,
+  gbpPocket: state.fxRates.pockets.gbp,
+  usdPocket: state.fxRates.pockets.usd,
+  eurPocket: state.fxRates.pockets.eur,
 });
 
-const mapDispatchToProps = {
-  fetchCurrentFXRate,
-};
+const mapDispatchToProps = {};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

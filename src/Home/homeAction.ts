@@ -12,6 +12,5 @@ export const fetchCurrentFXRate = (baseCurrency: string = "USD") => async (
   const fxRates: RawFX = await fetch(
     `${EXCHANGE_API}${baseCurrency}`
   ).then((resp) => resp.json());
-  console.log(fxRates);
   dispatch(fetchCurrentFXRateAction(fxRates));
 };
