@@ -53,3 +53,9 @@
   font-weight: 600;
   color: #10cbf7;
 }
+
+.exchange-table {
+  min-height: 40%;
+  max-height: 40%;
+  overflow-y: auto;
+}

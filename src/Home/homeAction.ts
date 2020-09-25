@@ -14,3 +14,35 @@ export const fetchCurrentFXRate = (baseCurrency: string = "USD") => async (
   ).then((resp) => resp.json());
   dispatch(fetchCurrentFXRateAction(fxRates));
 };
+
+export const deductFromBasePocketAction = (
+  fromAmount: number,
+  fromCurrency: string
+) => ({
+  type: "DEDUCT_FROM_POCKET",
+  fromAmount,
+  fromCurrency,
+});
+
+export const addToPocketAction = (toAmount: number, toCurrency: string) => ({
+  type: "Add_TO_POCKET",
+  toAmount,
+  toCurrency,
+});
+
+export const convertToPocket = ({
+  fromAmount,
+  fromCurrency,
+  toAmount,
+  toCurrency,
+}) => async (dispatch: any, getState: any): Promise<void> => {
+  const targetPocket = getState().fxRates.pockets[fromCurrency];
+  if (targetPocket.balance > fromAmount) {
+    dispatch(deductFromBasePocketAction(fromAmount, fromCurrency));
+    dispatch(addToPocketAction(toAmount, toCurrency));
+  } else {
+    alert("Insufficient Funds");
+  }
+
+  // dispatch(convertToPocketAction({}));
+};

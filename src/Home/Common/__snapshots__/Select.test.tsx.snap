@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Select Element Loads the default Dropdown 1`] = `
+<select
+  className="exchange-from-select"
+  onChange={[Function]}
+  value="EUR"
+>
+  <option
+    key="EUR"
+    value="EUR"
+  >
+    EUR
+  </option>
+  <option
+    key="GBP"
+    value="GBP"
+  >
+    GBP
+  </option>
+  <option
+    key="USD"
+    value="USD"
+  >
+    USD
+  </option>
+</select>
+`;

@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { fetchCurrentFXRate } from "../homeAction";
+import { fetchCurrentFXRate, convertToPocket } from "../homeAction";
 import { CURRENCYS } from "../../mockData";
 import SelectEl from "../Common/Select";
 import InputEl from "../Common/Input";
@@ -23,6 +23,7 @@ export type ExchangeState = {
 
 export type Props = {
   fetchCurrentFXRate: Function;
+  convertToPocket: Function;
   fxRate: any;
 };
 
@@ -73,6 +74,16 @@ export class Exchange extends React.Component<Props, ExchangeState> {
     }
   };
 
+  handleConvertPocket = () => {
+    const { fromAmount, fromCurrency, toAmount, toCurrency } = this.state;
+    this.props.convertToPocket({
+      fromAmount,
+      fromCurrency,
+      toAmount,
+      toCurrency,
+    });
+  };
+
   render() {
     const exchangeRateString =
       this.getExchangeVal() &&
@@ -106,8 +117,12 @@ export class Exchange extends React.Component<Props, ExchangeState> {
           </div>
         </div>
 
-        <button disabled={!validInputReg.test(this.state.fromAmount!)}>
-          Convert
+        <button
+          className="convert-button"
+          disabled={!validInputReg.test(this.state.fromAmount!)}
+          onClick={this.handleConvertPocket}
+        >
+          Convert to Pocket
         </button>
       </section>
     );
@@ -120,6 +135,7 @@ const mapStateToProps = (state: any) => ({
 
 const mapDispatchToProps = {
   fetchCurrentFXRate,
+  convertToPocket,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Exchange);

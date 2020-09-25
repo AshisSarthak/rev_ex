@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pockets Element Loads the default Dropdown 1`] = `
+<section
+  className="pocket-container"
+>
+  <div
+    className="pocket-currency"
+  >
+    <div
+      className="currency-balance"
+    >
+      <div
+        className="currency-symbol"
+      >
+        €
+      </div>
+    </div>
+  </div>
+  <div
+    className="exchange-table"
+  />
+</section>
+`;

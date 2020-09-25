@@ -45,13 +45,18 @@ const Pocket = (props: PocketProps) => {
     <section className="pocket-container">
       <div className="pocket-currency">
         <div className="currency-balance">
-          {props.pocket.balance}
+          {props.pocket &&
+            props.pocket.balance &&
+            props.pocket.balance.toFixed(2)}
           <div className="currency-symbol">{currentSymbol}</div>
         </div>
       </div>
       <div className="exchange-table">
-        {getExchangeRowHeader()}
-        {getExchangeEntries()}
+        {props.pocket && props.pocket.transactions && (
+          <>
+            {getExchangeRowHeader()} {getExchangeEntries()}
+          </>
+        )}
       </div>
     </section>
   );

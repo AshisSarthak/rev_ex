@@ -74,9 +74,9 @@ export class Home extends React.Component<HomeProps, HomeState> {
 
 const mapStateToProps = (state: any) => ({
   fxRate: state.fxRates.fxRates,
-  gbpPocket: state.fxRates.pockets.gbp,
-  usdPocket: state.fxRates.pockets.usd,
-  eurPocket: state.fxRates.pockets.eur,
+  gbpPocket: state.fxRates.pockets.GBP,
+  usdPocket: state.fxRates.pockets.USD,
+  eurPocket: state.fxRates.pockets.EUR,
 });
 
 const mapDispatchToProps = {};

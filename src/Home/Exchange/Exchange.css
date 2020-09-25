@@ -44,3 +44,14 @@
   font-weight: 100;
   color: white;
 }
+
+.convert-button {
+  float: right;
+  padding: 10px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 20px 200px 0px 0px;
+  font-size: 20px;
+  color: #10cbf7;
+}
