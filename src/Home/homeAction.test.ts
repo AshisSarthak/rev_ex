@@ -7,7 +7,7 @@ import { CURRENCYS } from "../mockData";
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
-const mockResponse = {
+export const mockResponse = {
   rates: {
     CAD: 1.3396307428,
     HKD: 7.7501073422,
@@ -88,6 +88,8 @@ describe("Home actions creators", () => {
   });
 
   it("should perfrom the Convert feature for pockets", async () => {
+    const jsdomAlert = window.alert; // remember the jsdom alert
+    window.alert = () => {}; // provide an empty implementation for window.alert
     const expectedActions = [
       {
         type: "DEDUCT_FROM_POCKET",
@@ -112,6 +114,7 @@ describe("Home actions creators", () => {
       .then(() => {
         expect(store.getActions()).toMatchObject(expectedActions);
       });
+    window.alert = jsdomAlert;
   });
 
   it("should perfrom the Convert feature for pockets where there is insufficient funds", async () => {

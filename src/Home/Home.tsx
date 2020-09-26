@@ -4,11 +4,12 @@ import "./Home.css";
 import Pocket from "./Pockets/Pockets";
 import Exchange from "./Exchange/Exchange";
 import { CURRENCYS } from "../mockData";
+import { PocketData } from "./homeTypes";
 
 export type HomeProps = {
-  gbpPocket: any;
-  usdPocket: any;
-  eurPocket: any;
+  gbpPocket: PocketData;
+  usdPocket: PocketData;
+  eurPocket: PocketData;
 };
 
 export type HomeState = {

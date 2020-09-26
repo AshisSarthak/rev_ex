@@ -6,6 +6,7 @@ import SelectEl from "../Common/Select";
 import InputEl from "../Common/Input";
 import "./Exchange.css";
 import { getCurrencySymbol } from "../Pockets/Pockets";
+import { RawFX } from "../homeTypes";
 
 const defaultOptionList = [CURRENCYS.USD, CURRENCYS.EUR, CURRENCYS.GBP];
 const validInputReg = new RegExp(/^[+-]?((\d+(\.\d{1,2})?)|(\.\d+))$/);
@@ -24,7 +25,7 @@ export type ExchangeState = {
 export type Props = {
   fetchCurrentFXRate: Function;
   convertToPocket: Function;
-  fxRate: any;
+  fxRate: RawFX;
 };
 
 export class Exchange extends React.Component<Props, ExchangeState> {
@@ -38,6 +39,10 @@ export class Exchange extends React.Component<Props, ExchangeState> {
 
   componentDidMount() {
     this.props.fetchCurrentFXRate(this.state.fromCurrency);
+    // Provision for fetching the Exchange rate in every 10 seconds
+    // setTimeout(() => {
+    //   this.props.fetchCurrentFXRate(this.state.fromCurrency);
+    // }, 10000);
   }
 
   selectFromChangeHandler = async (value: CURRENCYS) => {
@@ -52,14 +57,14 @@ export class Exchange extends React.Component<Props, ExchangeState> {
     });
   };
 
-  selectToChangeHandler = (value: any) => {
+  selectToChangeHandler = (value: CURRENCYS) => {
     this.setState({
       toCurrency: value,
       toAmount: this.state.fromAmount! * this.getExchangeVal(value),
     });
   };
 
-  selectFromHandler = (value: any) => {
+  selectFromAmountHandler = (value: number) => {
     this.setState({
       fromAmount: value,
       toAmount: value * this.getExchangeVal(),
@@ -102,7 +107,7 @@ export class Exchange extends React.Component<Props, ExchangeState> {
               currentVal={this.state.fromCurrency}
             />
             <InputEl
-              onChange={this.selectFromHandler}
+              onChange={this.selectFromAmountHandler}
               value={this.state.fromAmount}
             />
           </div>

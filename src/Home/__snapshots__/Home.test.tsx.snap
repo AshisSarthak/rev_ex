@@ -1,0 +1,519 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home Element Loads the default Dropdown 1`] = `
+<div
+  className="home"
+>
+  <header
+    className="home-header"
+  >
+    <nav
+      className="header-nav selected-nav"
+      onClick={[Function]}
+    >
+      Home
+    </nav>
+    <nav
+      className="header-nav"
+      onClick={[Function]}
+    >
+      Exchange
+    </nav>
+  </header>
+  <div
+    className="pockets-header"
+  >
+    Your Pockets
+  </div>
+  <section
+    className="pockets-details"
+  >
+    <Pocket
+      currency="GBP"
+      pocket={
+        Object {
+          "balance": 100,
+          "transactions": Array [
+            Object {
+              "balance": 50,
+              "id": 1,
+              "timestamp": 1000230,
+            },
+            Object {
+              "balance": 80,
+              "id": 2,
+              "timestamp": 1000230,
+            },
+            Object {
+              "balance": 90,
+              "id": 3,
+              "timestamp": 1000230,
+            },
+          ],
+        }
+      }
+    />
+    <Pocket
+      currency="USD"
+      pocket={
+        Object {
+          "balance": 100,
+          "transactions": Array [
+            Object {
+              "balance": 50,
+              "id": 1,
+              "timestamp": 1000230,
+            },
+            Object {
+              "balance": 80,
+              "id": 2,
+              "timestamp": 1000230,
+            },
+            Object {
+              "balance": 90,
+              "id": 3,
+              "timestamp": 1000230,
+            },
+          ],
+        }
+      }
+    />
+    <Pocket
+      currency="EUR"
+      pocket={
+        Object {
+          "balance": 100,
+          "transactions": Array [
+            Object {
+              "balance": 50,
+              "id": 1,
+              "timestamp": 1000230,
+            },
+            Object {
+              "balance": 80,
+              "id": 2,
+              "timestamp": 1000230,
+            },
+            Object {
+              "balance": 90,
+              "id": 3,
+              "timestamp": 1000230,
+            },
+          ],
+        }
+      }
+    />
+  </section>
+</div>
+`;
+
+exports[`Home Element Loads the redux connect 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Home
+    eurPocket={
+      Object {
+        "balance": 100,
+        "transactions": Array [
+          Object {
+            "balance": 50,
+            "id": 1,
+            "timestamp": 1000230,
+          },
+          Object {
+            "balance": 80,
+            "id": 2,
+            "timestamp": 1000230,
+          },
+          Object {
+            "balance": 90,
+            "id": 3,
+            "timestamp": 1000230,
+          },
+        ],
+      }
+    }
+    gbpPocket={
+      Object {
+        "balance": 100,
+        "transactions": Array [
+          Object {
+            "balance": 50,
+            "id": 1,
+            "timestamp": 1000230,
+          },
+          Object {
+            "balance": 80,
+            "id": 2,
+            "timestamp": 1000230,
+          },
+          Object {
+            "balance": 90,
+            "id": 3,
+            "timestamp": 1000230,
+          },
+        ],
+      }
+    }
+    usdPocket={
+      Object {
+        "balance": 100,
+        "transactions": Array [
+          Object {
+            "balance": 50,
+            "id": 1,
+            "timestamp": 1000230,
+          },
+          Object {
+            "balance": 80,
+            "id": 2,
+            "timestamp": 1000230,
+          },
+          Object {
+            "balance": 90,
+            "id": 3,
+            "timestamp": 1000230,
+          },
+        ],
+      }
+    }
+  >
+    <div
+      className="home"
+    >
+      <header
+        className="home-header"
+      >
+        <nav
+          className="header-nav selected-nav"
+          onClick={[Function]}
+        >
+          Home
+        </nav>
+        <nav
+          className="header-nav"
+          onClick={[Function]}
+        >
+          Exchange
+        </nav>
+      </header>
+      <div
+        className="pockets-header"
+      >
+        Your Pockets
+      </div>
+      <section
+        className="pockets-details"
+      >
+        <Pocket
+          currency="GBP"
+          pocket={
+            Object {
+              "balance": 100,
+              "transactions": Array [
+                Object {
+                  "balance": 50,
+                  "id": 1,
+                  "timestamp": 1000230,
+                },
+                Object {
+                  "balance": 80,
+                  "id": 2,
+                  "timestamp": 1000230,
+                },
+                Object {
+                  "balance": 90,
+                  "id": 3,
+                  "timestamp": 1000230,
+                },
+              ],
+            }
+          }
+        >
+          <section
+            className="pocket-container"
+          >
+            <div
+              className="pocket-currency"
+            >
+              <div
+                className="currency-balance"
+              >
+                100.00
+                <div
+                  className="currency-symbol"
+                >
+                  £
+                </div>
+              </div>
+            </div>
+            <div
+              className="exchange-table"
+            >
+              <div
+                className="exchange-entries"
+              >
+                <div
+                  className="exchange-header"
+                >
+                  Timestamp
+                </div>
+                <div
+                  className="exchange-header"
+                >
+                  Balance
+                </div>
+              </div>
+               
+              <div
+                className="exchange-entries"
+                key="0"
+              >
+                <div>
+                  1000230
+                </div>
+                <div>
+                  50
+                  £
+                </div>
+              </div>
+              <div
+                className="exchange-entries"
+                key="1"
+              >
+                <div>
+                  1000230
+                </div>
+                <div>
+                  80
+                  £
+                </div>
+              </div>
+              <div
+                className="exchange-entries"
+                key="2"
+              >
+                <div>
+                  1000230
+                </div>
+                <div>
+                  90
+                  £
+                </div>
+              </div>
+            </div>
+          </section>
+        </Pocket>
+        <Pocket
+          currency="USD"
+          pocket={
+            Object {
+              "balance": 100,
+              "transactions": Array [
+                Object {
+                  "balance": 50,
+                  "id": 1,
+                  "timestamp": 1000230,
+                },
+                Object {
+                  "balance": 80,
+                  "id": 2,
+                  "timestamp": 1000230,
+                },
+                Object {
+                  "balance": 90,
+                  "id": 3,
+                  "timestamp": 1000230,
+                },
+              ],
+            }
+          }
+        >
+          <section
+            className="pocket-container"
+          >
+            <div
+              className="pocket-currency"
+            >
+              <div
+                className="currency-balance"
+              >
+                100.00
+                <div
+                  className="currency-symbol"
+                >
+                  $
+                </div>
+              </div>
+            </div>
+            <div
+              className="exchange-table"
+            >
+              <div
+                className="exchange-entries"
+              >
+                <div
+                  className="exchange-header"
+                >
+                  Timestamp
+                </div>
+                <div
+                  className="exchange-header"
+                >
+                  Balance
+                </div>
+              </div>
+               
+              <div
+                className="exchange-entries"
+                key="0"
+              >
+                <div>
+                  1000230
+                </div>
+                <div>
+                  50
+                  $
+                </div>
+              </div>
+              <div
+                className="exchange-entries"
+                key="1"
+              >
+                <div>
+                  1000230
+                </div>
+                <div>
+                  80
+                  $
+                </div>
+              </div>
+              <div
+                className="exchange-entries"
+                key="2"
+              >
+                <div>
+                  1000230
+                </div>
+                <div>
+                  90
+                  $
+                </div>
+              </div>
+            </div>
+          </section>
+        </Pocket>
+        <Pocket
+          currency="EUR"
+          pocket={
+            Object {
+              "balance": 100,
+              "transactions": Array [
+                Object {
+                  "balance": 50,
+                  "id": 1,
+                  "timestamp": 1000230,
+                },
+                Object {
+                  "balance": 80,
+                  "id": 2,
+                  "timestamp": 1000230,
+                },
+                Object {
+                  "balance": 90,
+                  "id": 3,
+                  "timestamp": 1000230,
+                },
+              ],
+            }
+          }
+        >
+          <section
+            className="pocket-container"
+          >
+            <div
+              className="pocket-currency"
+            >
+              <div
+                className="currency-balance"
+              >
+                100.00
+                <div
+                  className="currency-symbol"
+                >
+                  €
+                </div>
+              </div>
+            </div>
+            <div
+              className="exchange-table"
+            >
+              <div
+                className="exchange-entries"
+              >
+                <div
+                  className="exchange-header"
+                >
+                  Timestamp
+                </div>
+                <div
+                  className="exchange-header"
+                >
+                  Balance
+                </div>
+              </div>
+               
+              <div
+                className="exchange-entries"
+                key="0"
+              >
+                <div>
+                  1000230
+                </div>
+                <div>
+                  50
+                  €
+                </div>
+              </div>
+              <div
+                className="exchange-entries"
+                key="1"
+              >
+                <div>
+                  1000230
+                </div>
+                <div>
+                  80
+                  €
+                </div>
+              </div>
+              <div
+                className="exchange-entries"
+                key="2"
+              >
+                <div>
+                  1000230
+                </div>
+                <div>
+                  90
+                  €
+                </div>
+              </div>
+            </div>
+          </section>
+        </Pocket>
+      </section>
+    </div>
+  </Home>
+</Provider>
+`;

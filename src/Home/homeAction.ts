@@ -7,7 +7,7 @@ export const fetchCurrentFXRateAction = (rawFxRates: RawFX) => ({
 });
 
 export const fetchCurrentFXRate = (baseCurrency: string = "USD") => async (
-  dispatch: any
+  dispatch: Function
 ): Promise<void> => {
   const fxRates: RawFX = await fetch(
     `${EXCHANGE_API}${baseCurrency}`
@@ -35,14 +35,15 @@ export const convertToPocket = ({
   fromCurrency,
   toAmount,
   toCurrency,
-}) => async (dispatch: any, getState: any): Promise<void> => {
+}) => async (dispatch: Function, getState: Function): Promise<void> => {
   const targetPocket = getState().fxRates.pockets[fromCurrency];
   if (targetPocket.balance > fromAmount) {
     dispatch(deductFromBasePocketAction(fromAmount, fromCurrency));
     dispatch(addToPocketAction(toAmount, toCurrency));
+    alert(
+      "Converted to Pockets Balance. Go to Home screen to see the updated balance."
+    );
   } else {
     alert("Insufficient Funds");
   }
-
-  // dispatch(convertToPocketAction({}));
 };

@@ -16,7 +16,6 @@ const InputEl = (props: InputElProps) => {
     <input
       type="number"
       className="exchange-from-input"
-      step=".01"
       placeholder="Enter Amount"
       onChange={handleInputChange}
       value={props.value}

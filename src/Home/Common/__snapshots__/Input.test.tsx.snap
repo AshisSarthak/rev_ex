@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input Element Loads the default Dropdown 1`] = `
+<input
+  className="exchange-from-input"
+  disabled={true}
+  onChange={[Function]}
+  placeholder="Enter Amount"
+  type="number"
+  value={10}
+/>
+`;

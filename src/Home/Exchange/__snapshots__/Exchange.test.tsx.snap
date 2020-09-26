@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Exchange Section Loads the default Exchange section 1`] = `
+<section
+  className="exchange-container"
+>
+  <div
+    className="exchange-rate"
+  />
+  <div
+    className="exchange-from-container"
+  >
+    <div
+      className="exchange-box"
+    >
+      <SelectEl
+        currentVal="USD"
+        onChange={[Function]}
+        optionLists={
+          Array [
+            "USD",
+            "EUR",
+            "GBP",
+          ]
+        }
+      />
+      <InputEl
+        onChange={[Function]}
+      />
+    </div>
+    <div
+      className="exchange-to-label"
+    >
+       to 
+    </div>
+    <div
+      className="exchange-box"
+    >
+      <SelectEl
+        currentVal="EUR"
+        onChange={[Function]}
+        optionLists={
+          Array [
+            "EUR",
+            "GBP",
+          ]
+        }
+      />
+      <InputEl
+        disabled={true}
+      />
+    </div>
+  </div>
+  <button
+    className="convert-button"
+    disabled={true}
+    onClick={[Function]}
+  >
+    Convert to Pocket
+  </button>
+</section>
+`;

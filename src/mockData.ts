@@ -1,4 +1,6 @@
-export const demoPacketData = {
+import { PocketData } from "./Home/homeTypes";
+
+export const demoPacketData: PocketData = {
   balance: 100,
   transactions: [
     {

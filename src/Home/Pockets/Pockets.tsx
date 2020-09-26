@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import "./Pockets.css";
 import { CURRENCY_SYMBOL, CURRENCYS } from "../../mockData";
+import { PocketData, TransactionData } from "../homeTypes";
 
 export type PocketProps = {
-  pocket: any;
+  pocket: PocketData | undefined;
   currency: string;
 };
 
@@ -29,17 +30,20 @@ const Pocket = (props: PocketProps) => {
   );
 
   const getExchangeEntries = () => {
-    return props.pocket.transactions.map((val: any, index: number) => {
-      return (
-        <div key={index} className="exchange-entries">
-          <div>{val.timestamp}</div>
-          <div>
-            {val.balance}
-            {currentSymbol}
+    return (
+      props.pocket &&
+      props.pocket.transactions.map((val: TransactionData, index: number) => {
+        return (
+          <div key={index} className="exchange-entries">
+            <div>{val.timestamp}</div>
+            <div>
+              {val.balance}
+              {currentSymbol}
+            </div>
           </div>
-        </div>
-      );
-    });
+        );
+      })
+    );
   };
   return (
     <section className="pocket-container">

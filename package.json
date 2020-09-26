@@ -28,8 +28,10 @@
     "collectCoverageFrom": [
       "**/*.{ts,tsx}",
       "!**/node_modules/**",
-      "!**/index.ts",
-      "!src/**/*.test.{ts,tsx}"
+      "!**/src/index.tsx",
+      "!**/src/serviceWorker.ts",
+      "!**/src/store.ts",
+      "!**/src/**/*.test.{ts,tsx}"
     ],
     "coverageReporters": [
       "lcov",
@@ -48,7 +50,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "test:coverage": "npm test -- --coverage",
+    "test:coverage": "npm test -- --coverage --watchAll=false",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
